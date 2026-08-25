@@ -15,13 +15,13 @@
   
 ## Структура проекта
 Notes-Manager/
-├── .github
-├── NotesManager
-|   ├── Program.cs          # Основной код
-|   ├── Note.cs             # Модель заметки
-|   ├── NoteManager.csproj
-|   └── README.md           # Описание проекта
-|└── NotesManager.sln
+- ├── .github
+- ├── NotesManager
+|     ├── Program.cs          # Основной код
+|     ├── Note.cs             # Модель заметки
+|     ├── NoteManager.csproj
+|     └── README.md           # Описание проекта
+- └── NotesManager.sln
 
 ## Запуск
 - cd [путь до папки]
