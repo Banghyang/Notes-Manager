@@ -14,14 +14,14 @@
 - Загрузка из файла
   
 ## Структура проекта
-- Notes-Manager/
-- ├── .github
-- ├── NotesManager
- -    ├── Program.cs          # Точка входа
- -    ├── Note.cs             # Модель заметки
- -    ├── NoteManager.cs      # Логика работы с заметками
- -    └── README.md           # Описание проекта
-- └── NotesManager.sln
+Notes-Manager/
+├── .github
+├── NotesManager
+|   ├── Program.cs          # Основной код
+|   ├── Note.cs             # Модель заметки
+|   ├── NoteManager.csproj
+|   └── README.md           # Описание проекта
+|└── NotesManager.sln
 
 ## Запуск
 - cd [путь до папки]
