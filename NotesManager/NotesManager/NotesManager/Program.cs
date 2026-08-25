@@ -13,15 +13,28 @@ namespace NotesManager
             string noteName = Console.ReadLine();
             Console.Clear();
             Console.WriteLine("Введите текст заметки:\n");
-            string noteText = Console.ReadLine();
-            Console.Clear();
-            Notes.Add(new Note(noteName, noteText));
-            SaveNote();
-            Console.WriteLine("\nЗаметка успешно создана!");
-            Console.WriteLine("\nНажмите любую клавишу для продолжения");
-            Console.ReadKey();
-            Console.Clear();
-            return;
+            List<string> TempNotes = new List<string>();
+            while (true) // Цикл для многострочного ввода
+            {
+                string note = Console.ReadLine();
+                if (note == "<Сохранить>")
+                {
+                    Console.Clear();
+                    Notes.Add(new Note(noteName, string.Join("\n", TempNotes)));
+                    SaveNote();
+                    Console.WriteLine("\nЗаметка успешно создана!");
+                    Console.WriteLine("\nНажмите любую клавишу для продолжения");
+                    Console.ReadKey();
+                    Console.Clear();
+                    return;
+                }
+                else if(note == "<Выйти>")
+                {
+                    Console.Clear();
+                    return;
+                }
+                TempNotes.Add(note);
+            }
 
         }
         static void SaveNote()
@@ -100,17 +113,30 @@ namespace NotesManager
             }
 
             Console.Clear();
+            Console.WriteLine("\nВведите <Сохранить> чтобы обновить записку или <Выйти> чтобы отменить редактирование: ");
             Console.WriteLine("\nВведите новый текст заметки: ");
-            Notes[noteNum].Text = Console.ReadLine();
-            SaveNote();
-            Console.Clear();
-            Console.WriteLine("Запись успешно отредактирована!");
-            Console.WriteLine("\nНажмите любую клавишу для продолжения");
-            Console.ReadKey();
-            Console.Clear();
-            return;
-
-
+            List<string> TempNotes = new List<string>();
+            while (true) // Цикл для многострочного ввода
+            {
+                string note = Console.ReadLine();
+                if (note == "<Сохранить>")
+                {
+                    Notes[noteNum].Text = string.Join("\n", TempNotes);
+                    SaveNote();
+                    Console.Clear();
+                    Console.WriteLine("Запись успешно отредактирована!");
+                    Console.WriteLine("\nНажмите любую клавишу для продолжения");
+                    Console.ReadKey();
+                    Console.Clear();
+                    return;
+                }
+                else if (note == "<Выйти>")
+                {
+                    Console.Clear();
+                    return;
+                }
+                TempNotes.Add(note);
+            }
         }
 
         static void ImportNotes()
