@@ -17,10 +17,10 @@
 Notes-Manager/
 - ├── .github
 - ├── NotesManager
-- _____├── Program.cs          # Основной код
-- _____├── Note.cs             # Модель заметки
-- _____├── NoteManager.csproj
-- _____└── README.md           # Описание проекта
+- ______├── Program.cs          # Основной код
+- ______├── Note.cs             # Модель заметки
+- ______├── NoteManager.csproj
+- ______└── README.md           # Описание проекта
 - └── NotesManager.sln
 
 ## Запуск
